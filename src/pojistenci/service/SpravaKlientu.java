@@ -1,10 +1,12 @@
-package pojistenci;
+package pojistenci.service;
+
+import pojistenci.model.Klient;
 
 import java.util.ArrayList;
-
+// Třída obsahující hlavní logiku
 public class SpravaKlientu {
     private ArrayList<Klient> klienti = new ArrayList<Klient>();
-
+    // Metoda pro přidání klienta
     public void pridejKlienta(Klient klient) {
         for (Klient k : klienti) {
             if (k.getJmeno().toLowerCase().equals(klient.getJmeno().toLowerCase()) &&
@@ -18,14 +20,14 @@ public class SpravaKlientu {
         klienti.add(klient); // Přidání klienta pouze, pokud není duplicita
         System.out.println("Klient byl přidán do seznamu pojištěnců.");
     }
-
+    // Metoda pro výpis všech klientů
     public void vsichniKlienti() {
         for (int i = 0; i < klienti.size(); i++) {
             Klient klient = klienti.get(i);
             System.out.println(klient);
         }
     }
-
+    // Metoda pro vyhledání Klienta
     public void vyhledejKlienta(String jmeno, String prijmeni) {
         boolean nalezen = false;
 
